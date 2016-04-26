@@ -1,4 +1,4 @@
-exports. character = function Character() {
+function Character() {
     this.player = '';
     this.charname = '';
     this.class = '';
@@ -19,7 +19,7 @@ exports. character = function Character() {
     this.spells = [];
     this.skills = [];
     this.feats = [];
-};
+}
 
 Character.prototype.createCharacter = function(){
     //executes 4d6 dice rolls, throwing out the lowest
@@ -45,3 +45,5 @@ Character.prototype.feat = function(feat){
     //character performs a feat
     console.log('feat');
 };
+
+module.exports = Character;
