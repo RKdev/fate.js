@@ -2,7 +2,7 @@ var players = [];
 
 function Character() {
     this.player = '';
-    this.name = '';
+    this.charname = '';
     this.class = '';
     this.race = '';
     this.strength = 0;
