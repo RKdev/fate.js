@@ -10,13 +10,15 @@ function Character() {
     this.fort = 0;
     this.const = 0;
     this.ac = 0;
+    this.maxHP = 0;
     this.hp = 0;
+    this.maxCasts = 0;
+    this.casts = 0;
     this.speed = 0;
     this.gold = 0;
     this.items = [];
     this.weapons = [];
     this.spells = [];
-    this.casts = 0;
     this.skills = [];
     this.feats = [];
 }
