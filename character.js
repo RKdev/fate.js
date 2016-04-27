@@ -18,6 +18,7 @@ function Character() {
     this.maxCasts = 0;
     this.casts = 0;
     this.speed = 0;
+    this.location = {ycoord:0, xcoord:0};
     this.gold = 0;
     this.items = [];
     this.weapons = [];
@@ -25,7 +26,6 @@ function Character() {
     this.skills = [];
     this.feats = [];
     this.familiar = '';
-    this.location = {ycoord:0, xcoord:0};
 }
 
 Character.prototype.createCharacter = function(){
@@ -36,7 +36,7 @@ Character.prototype.createCharacter = function(){
     console.log('createCharacter');
 };
 Character.prototype.attack = function(weapon, target){
-    //iniate an attach against the selected target with the selected weapon
+    //initiate an attack against the selected target with the selected weapon
     //roll d20
    //if crit roll again
     //compare roll with target hd (hidden from player)
@@ -45,12 +45,10 @@ Character.prototype.attack = function(weapon, target){
     //taget hd = hd-damage
     console.log('attack');
 };
-
 Character.prototype.level = function(){
     //level up a character
    //roll die and bump stats
 };
-
 Character.prototype.cast = function(spell, target){
     //cast the selected spell at the target
 
@@ -69,13 +67,11 @@ Character.prototype.skill = function(skill){
     //dm tells you the consequence
     console.log('skill');
 };
-
 Character.prototype.feat = function(feat){
     //character performs a feat
     //dm tells you the consequence
     console.log('feat');
 };
-
 Character.prototype.familarAction = function(action){
     //tell familar to do something
     //dm tells you the consequence
