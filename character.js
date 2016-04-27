@@ -5,9 +5,13 @@ function Character() {
     this.race = '';
     this.level = 0;
     this.strength = 0;
+    this.strengthMod = 0;
     this.dex = 0;
+    this.dexMod = 0;
     this.fort = 0;
+    this.fortMod = 0;
     this.const = 0;
+    this.constMod = 0;
     this.ac = 0;
     this.maxHP = 0;
     this.hp = 0;
