@@ -21,6 +21,7 @@ function Character() {
     this.skills = [];
     this.feats = [];
     this.familiar = '';
+    this.location = {ycoord:0, xcoord:0};
 }
 
 Character.prototype.createCharacter = function(){
