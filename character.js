@@ -3,6 +3,7 @@ function Character() {
     this.charname = '';
     this.class = '';
     this.race = '';
+    this.level = 0;
     this.strength = 0;
     this.dex = 0;
     this.fort = 0;
@@ -19,6 +20,7 @@ function Character() {
     this.spells = [];
     this.skills = [];
     this.feats = [];
+    this.familiar = '';
 }
 
 Character.prototype.createCharacter = function(){
@@ -29,21 +31,49 @@ Character.prototype.createCharacter = function(){
     console.log('createCharacter');
 };
 Character.prototype.attack = function(weapon, target){
-    //tells fate to iniate an attach against the selected target with the selected weapon
+    //iniate an attach against the selected target with the selected weapon
+    //roll d20
+   //if crit roll again
+    //compare roll with target hd (hidden from player)
+    //if d20 > target or crit  then hit
+    //roll damage die
+    //taget hd = hd-damage
     console.log('attack');
 };
+
+Character.prototype.level = function(){
+    //level up a character
+   //roll die and bump stats
+};
+
 Character.prototype.cast = function(spell, target){
-    //tells fate to cast the selected spell at the target
+    //cast the selected spell at the target
+
+    //role d20
+    //if crit roll again
+    //compare roll with target will or int spell hd
+    //if d20 > target or crit  then hit
+    //roll damage die
+    //taget hd = hd-damage
+
     console.log('cast');
 };
 Character.prototype.skill = function(skill){
     //character evokes a skill
+    //roll a d20 + skill modifier
+    //dm tells you the consequence
     console.log('skill');
 };
 
 Character.prototype.feat = function(feat){
     //character performs a feat
+    //dm tells you the consequence
     console.log('feat');
+};
+
+Character.prototype.familarAction = function(action){
+    //tell familar to do something
+    //dm tells you the consequence
 };
 
 module.exports = Character;
