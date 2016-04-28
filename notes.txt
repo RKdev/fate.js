@@ -1,0 +1,51 @@
+/dnd dm <slack-user-name>                         # designate the dm
+/dnd help                                         # print available commands
+/dnd ent:list                                     # list all tracked entities
+/dnd ent:spawn <name> <args>...                   # /dnd ent spawn Skeleton-1
+/dnd ent:destroy <name>                           # /dnd ent destroy Skeleton-1
+/dnd ent:rename <name> <new-name>
+
+#all "ent" commands follow same pattern, can be used by DM on any character.
+#Additionally, a character can be "used" by a player, allow alias shortcuts for
+# all the "ent" commands under "/ent"... available commands are described below
+#in that format
+/dnd ent:<cmd>... <name> <args>...
+
+/dnd use <name>                # select a char to control (lets you drop "/dnd ent:<cmd> <name>" command prefixes)
+/dnd describe <name>           # print basic info about an entity (name/class/simple stats)
+
+#state management commands
+/dnd save:new <name>
+/dnd save:list
+/dnd save:load <index>
+/dnd save:export <index>
+/dnd save:import <name> <json>
+
+#char stat management
+/ent stats
+/ent stat:mod <name> <op>
+/ent stat:set <name> <num>
+
+#char item management
+/ent items:list
+/ent items:add <object>
+/ent items:drop <index>
+/ent items:mod <index> "changes"
+
+#char weapon management
+/ent weap:list
+/ent weap:add <object>
+/ent weap:drop <index>
+/ent weap:mod <index> "changes"
+
+#char skills management
+/ent skills:list
+/ent skills:add <object>
+/ent skills:drop <index>
+/ent skills:mod <index> "changes"
+
+#char feats management
+/ent feats:list
+/ent feats:add <object>
+/ent feats:drop <index>
+/ent feats:mod <index> "changes"

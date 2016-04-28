@@ -10,7 +10,7 @@ var fateCharacter = require('./Character');
 
 var char = new fateCharacter();
 
-char.attack();
-char.skill();
-char.createCharacter();
-console.log(char.gold + "  Gold");
+//char.attack();
+//char.skill();
+//char.createCharacter();
+//console.log(char.gold + "  Gold");
