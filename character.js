@@ -34,6 +34,7 @@ Character.prototype.createCharacter = function(){
     //prompts user for name, class, race,
     //assigns base stats to character
     console.log('createCharacter');
+
 };
 Character.prototype.attack = function(weapon, target){
     //initiate an attack against the selected target with the selected weapon
