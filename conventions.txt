@@ -1,0 +1,7 @@
+Directory list
+
+notes: random notes
+refactor: outside code that needs attention before being moved into the working directory
+fate: a hubot instance
+fate/scripts: this is the working directory. Production code goes here
+
