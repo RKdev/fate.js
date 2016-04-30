@@ -34,7 +34,7 @@
  *   d1     - Roll 1 1-sided dice
  *
  */
-module.exports = function DiceRoller() {
+function DiceRoller() {
 
   // Private
 
@@ -116,4 +116,6 @@ module.exports = function DiceRoller() {
     return (parse(formula) === null) ? false : true ;
   };
 
-};
+}
+
+module.exports = DiceRoller;
