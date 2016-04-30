@@ -5,12 +5,14 @@ A simple DnD framework for playing a game asychronously on Slack
 
 #Setup
 install node.js
-  https://nodejs.org/en/download/
+
+https://nodejs.org/en/download/
 
 install hubot
-  npm install -g hubot coffee-script yo generator-hubot
 
-  repo contains a working hubot instance called "fate"
+npm install -g hubot coffee-script yo generator-hubot
+
+repo contains a working hubot instance called "fate"
 
 #Versions
 node version: v4.2.3
