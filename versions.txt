@@ -1,2 +1,0 @@
-node version: v4.2.3
-npm version: 2.14.7

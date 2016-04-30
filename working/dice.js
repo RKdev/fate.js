@@ -1,5 +1,6 @@
 /*
  * original https://gist.github.com/thebinarypenguin/5811014
+ * modified by https://github.com/RKdev
  * A virtual dice roller that accepts standard dice notation
  *
  *

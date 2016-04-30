@@ -1,7 +1,0 @@
-install node.js
-  https://nodejs.org/en/download/
-
-install hubot 
-  npm install -g hubot coffee-script yo generator-hubot
-  repo contains a working hubot instance called "fate"
-
