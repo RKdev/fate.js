@@ -28,13 +28,12 @@ function Character() {
     this.familiar = '';
 }
 
-Character.prototype.createCharacter = function(){
+Character.prototype.createCharacter = function(char){
     //executes 4d6 * 6 7 dice rolls, throwing out the lowest
     //prompts user to assign rolls to stats
     //prompts user for name, class, race,
     //assigns base stats to character
-    console.log('createCharacter');
-    return ('createCharacter');
+    return ('createCharacter ' + char);
 
 };
 Character.prototype.attack = function(weapon, target){
