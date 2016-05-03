@@ -65,9 +65,9 @@ function DiceRoller() {
    * Returns object on success and null on failure
    */
   var parse = function(formula) {
-    var matches = (formula.replace(/\s+/g, '')).match(/^(\d+)?d(\d+)([+-]\d+)?$/i);
+    var matches = (formula.replace(/\s+/g, '')).match(/(\d+)?d(\d+)([+-]\d+)?$/i);     //remove any spaces then match dice roll
     if (matches === null || matches[2] === 0) {
-      return null;
+      return null;  
     }
 
     var rolls    = (matches[1] !== undefined) ? (matches[1] - 0) : 1;

@@ -7,11 +7,18 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
+Char = require "./character.js"
+char = new Char()
+
+Dice = require "./diceroller.js"
+dice = new Dice()
 
 module.exports = (robot) ->
 
-  # robot.hear /badger/i, (res) ->
-  #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+ robot.hear /roll\s*(\d+d\d+)/, (res) ->
+  # res.send res.match
+  res.send char.gold = dice.roll(res.match[1]).toString()
+  res.send char.gold
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
