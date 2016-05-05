@@ -123,7 +123,7 @@ Character.prototype.stat = function(stat, value) {
     if (typeof value === 'number' && typeof stat === 'string') {
     switch(stat.toLowerCase()) {
     case "strength":
-        this.str = value;
+        this.strength = value;
         break;
     case "dexterity":
         this.dexterity = value;
