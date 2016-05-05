@@ -56,7 +56,7 @@ function DiceRoller() {
     } else if (modifier < 0) {
       return '[' + rolls + '] '  + ' - ' + Math.abs(modifier) + ' = ' + total;
     } else {
-      return (rolls == total) ? total : rolls + ' = ' + total;
+      return (rolls == total) ? '[' + total + ']' : '[' + rolls + '] = ' + total;
     }
   };
 
@@ -67,7 +67,7 @@ function DiceRoller() {
   var parse = function(formula) {
     var matches = (formula.replace(/\s+/g, '')).match(/(\d+)?d(\d+)([+-]\d+)?$/i);     //remove any spaces then match dice roll
     if (matches === null || matches[2] === 0) {
-      return null;  
+      return null;
     }
 
     var rolls    = (matches[1] !== undefined) ? (matches[1] - 0) : 1;

@@ -14,6 +14,5 @@ module.exports = (robot) ->
  robot.hear /^hello$/, (res) ->
   res.send "world!"
 
- robot.hear /create\s*([a-z0-9]*)/i, (res) ->
-  res.send res.match
+ robot.hear /create\s*([a-z0-9\s]*)/i, (res) ->
   res.send char.createCharacter(res.match[1])
