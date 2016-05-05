@@ -40,14 +40,14 @@ function Character() {
 
 Character.prototype.createCharacter = function(char){
     var rolls = [];
-    var retValue = 'createCharacter: ' + char +'\n';    //output of dice rolls
+    var retValue = 'createCharacter: ' + char +'\n';
 
     //executes 4d6 * 7 dice rolls
     for(var j = 0; j <= 6; j++) {
         for(var i = 0; i <=5; i++){
           rolls.push(dice.roll('4d6').toString());
           }
-          retValue = retValue + rolls + '\n';
+          retValue = retValue + 'Roll ' + (j + 1) + ')'+ rolls + '\n';
           rolls.length = 0;
     }
     return (retValue);
@@ -100,9 +100,9 @@ Character.prototype.stats = function(stat) {
     // takes a stat as an argument
    // if no stat is passed, returns all stats
     var retValue = '';
-    if (stat === 'all')  {
+    if (stat.toLowerCase() === 'all')  {
         retValue =
-            'Character: ' + this.charname + '\n'
+            '\nCharacter: ' + this.charname + '\n'
         + '==================' + '\n'
         + 'Strength: ' + this.strength + ' Mod: ' + this.strengthMod + '\n'
         + 'Dexterity: ' + this.dexterity + ' Mod: ' + this.dexterityMod +'\n'
@@ -110,8 +110,9 @@ Character.prototype.stats = function(stat) {
         + 'Intelligence: ' + this.intelligence + ' Mod: ' + this.intelligenceMod +'\n'
         + 'Wisdom: ' + this.wisdom + ' Mod: ' + this.wisdomMod +'\n'
         + 'Charisma: ' + this.charisma + ' Mod: ' + this.charismaMod +'\n'
-        + 'HP: ' + this.hp + ' remaining of  ' + this.maxHP + '\n'
-        + 'MP: ' + this.mp + ' remaining of  ' + this.maxMP + '\n'
+        + 'Gold:' + this.gold + '\n'
+        + 'HP: ' + this.hp + ' remaining of ' + this.maxHP + '\n'
+        + 'MP: ' + this.mp + ' remaining of ' + this.maxMP + '\n'
         + 'AC: ' + this.ac + '\n'
         ;
     }
