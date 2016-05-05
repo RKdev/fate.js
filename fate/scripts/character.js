@@ -42,12 +42,12 @@ Character.prototype.createCharacter = function(char){
     var rolls = [];
     var retValue = 'createCharacter: ' + char +'\n';
 
-    //executes 4d6 * 7 dice rolls
+    //executes 4d6 * 6 dice rolls 7 times
     for(var j = 0; j <= 6; j++) {
         for(var i = 0; i <=5; i++){
           rolls.push(dice.roll('4d6').toString());
           }
-          retValue = retValue + 'Roll ' + (j + 1) + ')'+ rolls + '\n';
+          retValue = retValue + 'Roll ' + (j + 1) + ') '+ rolls + '\n';
           rolls.length = 0;
     }
     return (retValue);
@@ -97,10 +97,10 @@ Character.prototype.familarAction = function(action){
 
 Character.prototype.stats = function(stat) {
     //returns characters stats
-    // takes a stat as an argument
-   // if no stat is passed, returns all stats
+    // takes a stat or 'all' as an argument
+
     var retValue = '';
-    if (stat.toLowerCase() === 'all')  {
+    if (stat === 'all')  {
         retValue =
             '\nCharacter: ' + this.charname + '\n'
         + '==================' + '\n'
@@ -141,10 +141,10 @@ Character.prototype.stat = function(stat, value) {
         this.charisma = value;
         break;
     default:
-        console.log('What was that???\n');
+        return('What was that???\n');
   }
 } else {
-    console.log("stat: invalid input");
+    return("stat: invalid input");
 }
 };
 
