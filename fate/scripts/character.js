@@ -1,3 +1,4 @@
+/*jshint laxbreak:true*/
 var Dice = require('./diceroller.js');
 var dice = new Dice();
 
@@ -9,22 +10,22 @@ function Character() {
     this.level = 0;
     this.strength = 0;
     this.strengthMod = 0;
-    this.dex = 0;
-    this.dexMod = 0;
-    this.const = 0;
-    this.constMod = 0;
-    this.int = 0;
-    this.intMod = 0;
-    this.wis = 0;
-    this.wisMod = 0;
-    this.chrs = 0;
-    this.chrsMod = 0;
+    this.dexterity = 0;
+    this.dexterityMod = 0;
+    this.constitution = 0;
+    this.constitutionMod = 0;
+    this.intelligence = 0;
+    this.intelligenceMod = 0;
+    this.wisdom = 0;
+    this.wisdomMod = 0;
+    this.charisma = 0;
+    this.charismaMod = 0;
     this.ac = 0;
     this.maxHP = 0;
     this.hp = 0;
     this.hd = 0;
-    this.maxCasts = 0;
-    this.casts = 0;
+    this.maxMP = 0;
+    this.mp = 0;
     this.speed = 0;
     this.location = {ycoord:0, xcoord:0};
     this.timeofdeath = 0;
@@ -96,6 +97,25 @@ Character.prototype.familarAction = function(action){
 
 Character.prototype.stats = function(stat) {
     //returns characters stats
+    // takes a stat as an argument
+   // if no stat is passed, returns all stats
+    var retValue = '';
+    if (stat === 'all')  {
+        retValue =
+            'Character: ' + this.charname + '\n'
+        + '==================' + '\n'
+        + 'Strength: ' + this.strength + ' Mod: ' + this.strengthMod + '\n'
+        + 'Dexterity: ' + this.dexterity + ' Mod: ' + this.dexterityMod +'\n'
+        + 'Constitution: ' + this.constitution + ' Mod: ' + this.constitutionMod +'\n'
+        + 'Intelligence: ' + this.intelligence + ' Mod: ' + this.intelligenceMod +'\n'
+        + 'Wisdom: ' + this.wisdom + ' Mod: ' + this.wisdomMod +'\n'
+        + 'Charisma: ' + this.charisma + ' Mod: ' + this.charismaMod +'\n'
+        + 'HP: ' + this.hp + ' remaining of  ' + this.maxHP + '\n'
+        + 'MP: ' + this.mp + ' remaining of  ' + this.maxMP + '\n'
+        + 'AC: ' + this.ac + '\n'
+        ;
+    }
+    return(retValue);
 };
 
 Character.prototype.stat = function(stat, value) {
@@ -105,23 +125,25 @@ Character.prototype.stat = function(stat, value) {
         this.str = value;
         break;
     case "dexterity":
-        this.dex = value;
+        this.dexterity = value;
         break;
     case "constitution":
-        this.const = value;
+        this.constitution = value;
         break;
     case "intelligence":
-        this.int = value;
+        this.intelligence = value;
         break;
     case "wisdom":
-        this.wis = value;
+        this.wisdom = value;
         break;
     case "charisma":
-        this.chrs = value;
+        this.charisma = value;
         break;
     default:
         console.log('What was that???\n');
   }
+} else {
+    console.log("stat: invalid input");
 }
 };
 
