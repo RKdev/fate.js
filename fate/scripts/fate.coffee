@@ -7,9 +7,7 @@ dice = new Dice()
 module.exports = (robot) ->
 
  robot.hear /roll\s*(\d+d\d+\s*[+-]?\s*\d?)/, (res) ->
-  res.send res.match
-  char.gold = dice.roll(res.match[1])
-  res.send char.gold
+  res.send dice.roll(res.match[1])
 
  robot.hear /^hello$/, (res) ->
   res.send "world!"
