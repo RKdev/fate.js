@@ -1,11 +1,9 @@
 var Engine = require("./engine.js");
-var Game = require('./game.js');
-
 var engine = new Engine();
-var game = new Game();
 
-engine.registerGame('Fateland');
-engine.registerGame('Bubble-Bobble');
+
+//engine.registerGame('Fateland');
+//engine.registerGame('Bubble-Bobble');
 
 
 /*
@@ -15,4 +13,4 @@ game.register('mobs', 'skeleton');
 game.register('bosses','Argus');
 game.register('joe', 'bob');
 */
-console.log(engine.objs);
+console.log(engine.listGames());
