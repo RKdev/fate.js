@@ -1,5 +1,5 @@
 function Game(){
-    this.objs = {
+    this.game = {
         title : [],
         players : [],
         characters : [],
@@ -11,8 +11,8 @@ function Game(){
 Game.prototype.register = function(obj, name){
 
     if (obj === 'title' || obj === 'players' || obj === 'characters' || obj === 'mobs' || obj === 'bosses'){
-        this.objs[obj].push(name);
-        //console.log(this.objs[obj].toString());
+        this.game[obj].push(name);
+        console.log(this.game[obj].toString() + ' created!');
     } else {
         console.log("Invalid input");
     }
