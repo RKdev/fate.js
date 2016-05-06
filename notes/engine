@@ -1,0 +1,8 @@
+games[] - array of games
+players[] - array of registered players
+char[] - array of characters
+mobs[] - array of mobs
+bosses[] - array of bosses
+
+createGames - makes a new game
+registerPlayer(game, player) - register player
