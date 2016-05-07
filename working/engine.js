@@ -31,14 +31,20 @@ Engine.prototype.listPlayers = function() {
 };
 
 Engine.prototype.DM = function(player, token) {
-    
-    if (token === 'catch') {
-        //if there is not already a dm then  make player dm
-    }
-    if (token === 'release') {
-        //if player is DM then release dm
+    if ((typeof player === 'string') && (typeof token === 'string')) {
+        if (token === 'catch') {
+            if (this.objs.dm.length === 0) {
+                this.objs.dm.push(player);
+            }
+            console.log(this.objs.dm.toString() + ' is the DM');
         }
-    //return dm name or "The is currently no DM!"
+        if (token === 'release') {
+            this.objs.dm.length = 0;
+        }
+        if (this.objs.dm.length === 0) {
+            console.log('There is currently no DM!');
+        }
+    } else { console.log('invalid input'); }
 };
 
 Engine.prototype.encounter = function(attacker, victim, attack) {
