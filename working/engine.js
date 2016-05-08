@@ -15,8 +15,12 @@ Engine.prototype.registerGame = function(name){
 };
 
 Engine.prototype.listGames = function(){
-    for(var i = 0; i < this.objs.games.length; i++){
-        console.log(this.objs.games[i].game.title.toString());
+    if(this.objs.games.length === 0) {
+        console.log('listGames: No Games!');
+    } else {
+            for(var i = 0; i < this.objs.games.length; i++){
+            console.log(this.objs.games[i].game.title.toString());
+            }
     }
 };
 
@@ -49,6 +53,27 @@ Engine.prototype.DM = function(player, token) {
 
 Engine.prototype.encounter = function(attacker, victim, attack) {
 
+};
+
+Engine.prototype.findGame = function(title){
+    retValue = '';
+    if (typeof title === 'string') {
+        if  (this.objs.games.length === 0) {
+             console.log('findGame: No Games!');
+        }   else {
+             for(var i = 0; i < this.objs.games.length; i++) {
+                if (title.toLowerCase() === this.objs.games[i].game.title.toString().toLowerCase()) {
+                    retValue = title;
+                    break;
+                }  else {
+                    retValue = 'findGame: Game not Found';
+                }
+             }
+                console.log(retValue);
+        }
+    }   else {
+        console.log('findGame: Invalid Input');
+    }
 };
 
 module.exports = Engine;

@@ -1,5 +1,8 @@
 /*jshint laxbreak:true*/
 var Dice = require('./diceroller.js');
+//var Engine = require('./engine.js');
+
+//var engine = new Engine() || engine;
 var dice = new Dice();
 
 function Character() {
