@@ -11,6 +11,7 @@ function Character() {
     this.class = '';
     this.race = '';
     this.level = 0;
+    this.XP = 0;
     this.strength = 0;
     this.strengthMod = 0;
     this.dexterity = 0;
