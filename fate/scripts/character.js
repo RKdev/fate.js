@@ -26,7 +26,7 @@ function Character() {
     this.charismaMod = 0;
     this.ac = 0;
     this.maxHP = 0;
-    this.hp = 0;
+    this.currentHP = 0;
     this.hd = 0;
     this.maxMP = 0;
     this.mp = 0;
