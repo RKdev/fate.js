@@ -28,7 +28,8 @@ Engine.prototype.loadGame = function(game, entity) {
     if ((typeof game === 'string') && (typeof entity === 'string')) {
         var storage = 'storage/' + game.toLowerCase() + '/';
         var data = fs.readFileSync(storage + entity + '.json', 'utf8');
-        console.log(data);
+        this.objs.games[0].game = JSON.parse(data);
+        console.log(this.objs.games[0].game);
     } else {
         console.log('loadGame: invalid input');
         }
