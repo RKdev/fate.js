@@ -1,4 +1,5 @@
 var Game = require('./game.js');
+var fs = require('fs');
 
 function Engine() {
     this.objs = {
@@ -12,6 +13,28 @@ Engine.prototype.registerGame = function(name){
         var newGame = new Game();
         newGame.register('title',name);
         this.objs.games.push(newGame);
+};
+
+Engine.prototype.storeGame = function(game, entity) {
+    if ((typeof game === 'string') && (typeof entity === 'string')) {
+        var storage = 'storage/' + game.toLowerCase() + '/';
+        var wstream = fs.createWriteStream(storage + entity + '.json');
+        wstream.write(JSON.stringify(this.objs.games[0].game));
+        wstream.end();
+
+    } else {
+        console.log('storeGame: invalid input');
+        }
+};
+
+Engine.prototype.loadGame = function(game, entity) {
+    if ((typeof game === 'string') && (typeof entity === 'string')) {
+        var storage = 'storage/' + game.toLowerCase() + '/';
+        var data = fs.readFileSync(storage + entity + '.json', 'utf8');
+        console.log(data);
+    } else {
+        console.log('loadGame: invalid input');
+        }
 };
 
 Engine.prototype.listGames = function(){

@@ -7,6 +7,23 @@ bosses[] - array of bosses
 createGames - makes a new game
 registerPlayer(game, player) - register player
 
+store dm -> storage/dm.json
+store games -> if not exist storage/game then make storage/game
+store game -> title.json, players.json, characters.json, mobs.json, bosses.json
 
-loadCharacters
-storeCharacters
+
+function Engine() {
+    this.objs = {
+    games : [],
+    players: [],
+    dm:[]
+    };
+
+    function Game(){
+        this.game = {
+            title : [],
+            players : [],
+            characters : [],
+            mobs : [],
+            bosses : [],
+        };
