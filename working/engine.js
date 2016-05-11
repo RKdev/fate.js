@@ -18,10 +18,7 @@ Engine.prototype.registerGame = function(name){
 Engine.prototype.storeGame = function(game, entity) {
     if ((typeof game === 'string') && (typeof entity === 'string')) {
         var storage = 'storage/' + game.toLowerCase() + '/';
-        var wstream = fs.createWriteStream(storage + entity + '.json');
-        wstream.write(JSON.stringify(this.objs.games[0].game));
-        wstream.end();
-
+        fs.writeFileSync(storage + entity + '.json', JSON.stringify(this.objs.games[0].game));
     } else {
         console.log('storeGame: invalid input');
         }

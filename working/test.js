@@ -1,8 +1,8 @@
 var Engine = require("./engine.js");
 var engine = new Engine();
 
-//engine.registerGame('fateland');
-//engine.storeGame('fateland', 'title');
+engine.registerGame('fateland');
+engine.storeGame('fateland', 'title');
 engine.loadGame('fateland', 'title');
 
 /*
