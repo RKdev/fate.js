@@ -6,3 +6,7 @@ bosses[] - array of bosses
 
 createGames - makes a new game
 registerPlayer(game, player) - register player
+
+
+loadCharacters
+storeCharacters
