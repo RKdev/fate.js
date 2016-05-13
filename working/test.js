@@ -3,6 +3,6 @@ var engine = new Engine();
 
 engine.registerGame('fateland');
 
-engine.loadGame('fateland', 'title');
+engine.loadGame('fateland');
 
-engine.storeGame('fateland', 'title');
+engine.storeGame('fateland');

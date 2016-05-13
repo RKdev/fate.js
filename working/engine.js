@@ -15,20 +15,19 @@ Engine.prototype.registerGame = function(name){
         this.objs.games.push(newGame);
 };
 
-Engine.prototype.storeGame = function(game, entity) {
-    if ((typeof game === 'string') && (typeof entity === 'string')) {
-        var storage = 'storage/' + game.toLowerCase() + '/';
-        fs.writeFileSync(storage + entity + '.json', JSON.stringify(this.objs.games[0].game));
+Engine.prototype.storeGame = function(game) {
+    if (typeof game === 'string' ) {
+        var storage = 'storage/' + game.toLowerCase() + '.json';
+        fs.writeFileSync(storage, JSON.stringify(this.objs.games[0].game));
     } else {
         console.log('storeGame: invalid input');
         }
 };
 
-Engine.prototype.loadGame = function(game, entity) {
-    if ((typeof game === 'string') && (typeof entity === 'string')) {
-        var storage = 'storage/' + game.toLowerCase() + '/';
-        var data = fs.readFileSync(storage + entity + '.json', 'utf8');
-        this.objs.games[0].game = JSON.parse(data);
+Engine.prototype.loadGame = function(game) {
+    if (typeof game === 'string') {
+        var storage = 'storage/' + game.toLowerCase() + '.json';
+        this.objs.games[0].game = JSON.parse(fs.readFileSync(storage, 'utf8'));
         console.log(this.objs.games[0].game);
     } else {
         console.log('loadGame: invalid input');

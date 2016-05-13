@@ -1,0 +1,41 @@
+{"creatureName" : "goblin",
+"creatureType" : "humanoid (goblinoid)",
+"size" : "small",
+"alignment" : "neutral evil",
+"race" : "goblin",
+"cr" : 0.25,
+"strength" : 8,
+"strengthMod" : -1,
+"dexterity" : 14,
+"dexterityMod" : 2,
+"constitution" : 10,
+"constitutionMod" : 0,
+"intelligence" : 10,
+"intelligenceMod" : 0,
+"wisdom" : 8,
+"wisdomMod" : -1,
+"charisma" : 8,
+"charismaMod" : -1,
+"ac" : 15,
+"hd" : "2d6",
+"maxHP" : 0,
+"currentHP" : 0,
+"speed" : 30,
+"spells" : [],
+"passivePerception" : 9,
+"skills" : [{"skill": "stealth", "ability": "dexterity", "creatureMod": 6}],
+"languages" : [ "common", "goblin"],
+"senses" : [ "darkvision 60ft" ],
+"features" : [
+       {"feature": "nimble escape", "description": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."}
+   ],
+"weapons" : [
+       {"type": "scimitar", "type": "melee weapon", "reach": "5", "attack": "4", "damage": "1d6+2", "damageType":
+"slashing", "targets": "1"},
+       {"action": "shortbow", "type": "ranged weapon", "range": "80/320", "attack": "4", "damage": "1d6+2", "damageType":
+"piercing", "targets": "1"}
+   ],
+"creatureDescription" : "Goblins are small, black-hearted, selfish humanoids that lair in caves, abandoned
+mines, despoiled dungeons, and other dismal settings. Individually weak, goblins gather in large- sometimes
+overwhelming- numbers. They crave power and regularly abuse whatever authority they obtain."
+}

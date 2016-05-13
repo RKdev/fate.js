@@ -1,0 +1,43 @@
+{"creatureName" : "orc",
+"creatureType" : "humanoid (orc)",
+"size" : "medium",
+"alignment" : "chaotic evil",
+"race" : "orc",
+"cr" : 0.5,
+"strength" : 16,
+"strengthMod" : 3,
+"dexterity" : 12,
+"dexterityMod" : 1,
+"constitution" : 16,
+"constitutionMod" : 3,
+"intelligence" : 7,
+"intelligenceMod" : -2,
+"wisdom" : 11,
+"wisdomMod" : 0,
+"charisma" : 10,
+"charismaMod" : 0,
+"ac" : 13,
+"hd" : "2d8+6",
+"maxHP" : 0,
+"currentHP" : 0,
+"speed" : 30,
+"spells" : [],
+"passivePerception" : 10,
+"skills" : [{"skill": "intimidation", "ability": "charisma", "creatureMod": 2}],
+"languages" : [ "common", "orc" ],
+"senses" : [ "darkvision 60ft"],
+"features" : [
+    {"feature": "aggressive", "description": "As a bonus action, the ore can move up to its speed
+toward a hostile creature that it can see."}
+],
+"weapons" : [
+    {"type": "greataxe", "type": "melee weapon", "reach": "5", "attack": "5", "damage": "1d12+3", "damageType": "slashing",
+"targets": "1"},
+    {"type": "javelin", "type": "melee weapon", "reach": "5", "attack": "5", "damage": "1d6+3", "damageType": "piercing",
+"targets": "1"},
+    {"type": "javelin", "type": "ranged weapon", "range": "30/20", "attack": "5", "damage": "1d6+3", "damageType":
+"piercing", "targets": "1"}
+],
+"creatureDescription" : "Orcs are savage raiders and pillagers with stooped postures, low foreheads, and
+piggish faces with prominent lower canines that resemble tusks."
+}
