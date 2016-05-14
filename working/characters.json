@@ -29,7 +29,8 @@
 "spells" : [],
 "skills" : [],
 "feats" : [],
-"familiar" : ""
+"familiar" : "",
+"currentWeapon" : ""
 },
 {
     "player" : "kz",
@@ -62,6 +63,7 @@
     "spells" : [],
     "skills" : [],
     "feats" : [],
-    "familiar" : ""
+    "familiar" : "",
+    "currentWeapon" : ""
 }
 ]

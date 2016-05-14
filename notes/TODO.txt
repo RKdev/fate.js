@@ -1,0 +1,35 @@
+Push game to prod
+  coffee script should include all game engine files and load 'fateland' automatically
+
+Create list of DM commands
+Create list of player commands
+Create empty functions for all commands
+
+Combat:
+Attack(attacker, victim, weapon (optional))
+performs an attack on the victim
+if successful subtract correct number of HP from victim
+if victim dies, returns victims death. Removes victim from encounter array
+
+Initiative()
+rolls an initiative roll
+sorts encounter array by initiative
+
+Spell(caster, victim)
+
+
+Character:
+showCurrentWeapon()
+showWeapons()
+switchCurrentWeapon()
+sets current weapon to an available weapon
+
+Engine:
+createEncounter()
+creates a new encounter
+
+listMobs() - lists available Mobs
+
+addMobtoEncounter() - adds a Mob to the current encounter array. rolls initiative for that mob
+
+XP() - determine appropriate amount of XP for the encounter and awards that to all players
