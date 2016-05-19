@@ -1,0 +1,104 @@
+
+- start encounter
+	(auto-name the encounter "encounter3" or whatever number encounter we are on)
+	(auto-include a current date value; for ease of navigating these records in the future)
+
+- add goblin x2 (no need for "add monster goblin x2")
+	(create two randomized goblin npcs, and add them to the encounter)
+	(auto-roll HP and Init for each monster)
+- add party (ie. add all chars from a currentPCs array)
+- add fenris daegalad bojangles (ie. for if only those three are in this combat)
+- cut fenris (remove fenris from encounter)
+
+- init all (roll init for all combatants in encounter)
+- init dm (roll init for all npc combatants)
+- init daegalad (roll init for daegalad)
+
+- rename goblin1 goblin-redHeadband (goblin1 now has two names: goblin1 and goblin-redHeadband)
+- show combatants (list all combatants in the encounter, format for each list item: "goblin1 goblin-redHeadband"
+
+- show goblin1 (list all stats/abilities/everthing for goblin1)
+	(i'd want this to be executable in private with the bot)
+
+- goblin1 scimitar fenris (execute goblin1's "Scimitar" Action, targeting fenris)
+- goblin1 magicMissile fenris daegalad (cast "Magic Missile", targeting fenris and daegalad)
+
+- goblin2 cureWounds fenris (cast Cure Wounds on Fenris, cuz he sorry his brother is so mean)
+
+
+- goblin1 check dex (roll dexterity ability check for goblin1)
+- goblin1 check dex dc15 (roll dexterity ability check for goblin1 vs a Difficulty Class 15; show result and show pass/fail)
+- goblin1 check acrobatics (roll acrobatics check for goblin1)
+- goblin1 check acrobatics dc15
+- goblin1 save dex (roll dexterity save for goblin1)
+- goblin1 save dex dc15
+
+
+
+
+- kill goblin1 (instantly 0 HP, no death saves/etc.)
+- kill goblin-redHeadband (" ")
+
+- show xp (display the total calculated xp reward, based on all combatants currently in combat)
+- award xp goblin1 (distribute xp to all pertinent chars for goblin1)
+- award xp (distribute all current xp to all pertinent chars)
+- roll treasure
+	(auto-calculate treasure based on Challenge Rating)
+	(assign all this to a "currentTreasure" array)
+	(display "currentTreasure" array)
+	(allow players to take items from the "currentTreasure" array and/or put items in the party inventory)
+- roll treasure goblin1
+	(auto-calculate treasure for goblin1)
+	(same as above)
+
+- rename encounter Waterfall, Goblins, Treasure Chest 
+	(encounter now has two names: "encounterX" and "Waterfall, Goblins, Treasure Chest")
+	(to help for navigating these records; typically will be invoked at end of combat, just before "end encounter", 
+
+so as not to serve as a spoiler to the players)
+
+- end encounter
+	(will execute "roll treasure" if that hasn't already been done)
+	(will execute "award xp" if that hasn't already been done)
+
+
+- show encounters (list names of all encounters so far; format for each list item: "encounter3 - Waterfall, Goblins, 
+
+Treasure Chest")
+- replay encounter3 (create a file/snippet/whatever of that encounter)
+
+- create npc Fred (start a blank npc named Fred, which I can set the values of)
+
+- set daegalad dex 15 (set dex to 15)
+- mod fred dex 2 (add 2 to his dex)
+- mod fred dex -1 (subtract 1 from dex)
+- set fred tempdex 20 (set Fred's "temporary dex" value, which if it has a value will override Fred's "dex" value for rolls)
+- mod fred tempdex 4 (add 4 to his tempdex)
+- set fred tempdex null (no more tempdex value for Fred; thus his normal "dex" now resumes its place)
+
+- set time 10 pm (the "time" value is set to "10 pm"; just a string)
+- set time sometime past midnight (the "time" value is set to "sometime past midnight")
+- set time 10 pm (the "time" value is set to "10 pm")
+- set date 1030 AQ, springtime (the "date" value is set to "1030 AQ, springtime")
+
+- show time (display the "time" string)
+- show date (display the "date" string)
+
+
+- to party 22gp 142sp shortsword oilFlask (add this all to the party's inventory)
+- to fenris XYZ (add XYZ to Fenris' inventory)
+- to fenris 100xp (add 100xp to Fen's current xp)
+- to fenris blinded (add status effect "Blinded" to fenris)
+- from fenris blinded (remove "Blinded")
+- fromto fenris bojangles 22gp (remove 22gp from fenris, give it to bojangles)
+- fromto fen boj 22gp (same as above)
+- from fenris 22gp (remove 22gp from fenris)
+
+- show daegalad status (list all status effects daegalad currently has, ie. "Daegalad status: )
+- daegalad status (" ")
+- show daegalad hp (show "Daegalad HP: 22/25", ie. current/max hp)
+- show daegalad (list all stats/abilities/everything for daegalad)
+- show daegalad combat (list only his stats that are pertinent to combat)
+- show daegalad inv (list all his money and equipment)
+- show daegalad inventory (same as above)
+

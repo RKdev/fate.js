@@ -96,4 +96,18 @@ Engine.prototype.findGame = function(title){
     }
 };
 
+Engine.prototype.checkDM = function (player) {
+    if (typeof player === 'string') {
+        if (player.toLowerCase() === this.objs.dm[0].toString().toLowerCase()) {
+            //return(1);
+            console.log('1');
+            } else {
+//                return(0);
+                  console.log('0');
+                }
+    } else {
+        console.log('checkDM: Invalid Input');
+        }
+};
+
 module.exports = Engine;
