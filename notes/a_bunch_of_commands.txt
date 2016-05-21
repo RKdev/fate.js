@@ -1,4 +1,3 @@
-
 - start encounter
 	(auto-name the encounter "encounter3" or whatever number encounter we are on)
 	(auto-include a current date value; for ease of navigating these records in the future)
@@ -51,9 +50,9 @@
 	(auto-calculate treasure for goblin1)
 	(same as above)
 
-- rename encounter Waterfall, Goblins, Treasure Chest 
+- rename encounter Waterfall, Goblins, Treasure Chest
 	(encounter now has two names: "encounterX" and "Waterfall, Goblins, Treasure Chest")
-	(to help for navigating these records; typically will be invoked at end of combat, just before "end encounter", 
+	(to help for navigating these records; typically will be invoked at end of combat, just before "end encounter",
 
 so as not to serve as a spoiler to the players)
 
@@ -62,9 +61,7 @@ so as not to serve as a spoiler to the players)
 	(will execute "award xp" if that hasn't already been done)
 
 
-- show encounters (list names of all encounters so far; format for each list item: "encounter3 - Waterfall, Goblins, 
-
-Treasure Chest")
+- show encounters (list names of all encounters so far; format for each list item: "encounter3 - Waterfall, Goblins, Treasure Chest")
 - replay encounter3 (create a file/snippet/whatever of that encounter)
 
 - create npc Fred (start a blank npc named Fred, which I can set the values of)
@@ -101,4 +98,3 @@ Treasure Chest")
 - show daegalad combat (list only his stats that are pertinent to combat)
 - show daegalad inv (list all his money and equipment)
 - show daegalad inventory (same as above)
-

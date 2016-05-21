@@ -5,6 +5,8 @@ function Game(){
         characters : [],
         mobs : [],
         bosses : [],
+        dm : [],
+        encounters : []
     };
 }
 
@@ -14,7 +16,7 @@ Game.prototype.register = function(obj, name){
         this.game[obj].push(name);
         console.log(this.game[obj].toString() + ' created!');
     } else {
-        console.log("Char.registar.obj: Invalid input");
+        console.log("Char.registar.obj: Invalid object");
     }
   } else { console.log("Char.register: Invalid input");}
 };
