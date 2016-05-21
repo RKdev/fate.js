@@ -5,7 +5,8 @@ function Engine() {
     this.objs = {
     games : [],
     players: [],
-    dm:[]
+    dm:[],
+    state:[] //encounter or normal
     };
 }
 
