@@ -1,4 +1,5 @@
 var Game = require('./game.js');
+var Encounter = require('./encounter.js');
 var fs = require('fs');
 
 function Engine() {
@@ -110,5 +111,7 @@ Engine.prototype.checkDM = function (player) {
         console.log('checkDM: Invalid Input');
         }
 };
+
+
 
 module.exports = Engine;
