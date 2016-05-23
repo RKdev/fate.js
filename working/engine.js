@@ -56,22 +56,6 @@ Engine.prototype.listPlayers = function() {
     console.log(this.objs.players.toString());
 };
 
-Engine.prototype.DM = function(player, token) {
-    if ((typeof player === 'string') && (typeof token === 'string')) {
-        if (token === 'catch') {
-            if (this.objs.dm.length === 0) {
-                this.objs.dm.push(player);
-            }
-            console.log(this.objs.dm.toString() + ' is the DM');
-        }
-        if (token === 'release') {
-            this.objs.dm.length = 0;
-        }
-        if (this.objs.dm.length === 0) {
-            console.log('There is currently no DM!');
-        }
-    } else { console.log('invalid input'); }
-};
 
 Engine.prototype.encounter = function(attacker, victim, attack) {
 
@@ -97,21 +81,6 @@ Engine.prototype.findGame = function(title){
         console.log('findGame: Invalid Input');
     }
 };
-
-Engine.prototype.checkDM = function (player) {
-    if (typeof player === 'string') {
-        if (player.toLowerCase() === this.objs.dm[0].toString().toLowerCase()) {
-            //return(1);
-            console.log('1');
-            } else {
-//                return(0);
-                  console.log('0');
-                }
-    } else {
-        console.log('checkDM: Invalid Input');
-        }
-};
-
 
 
 module.exports = Engine;
