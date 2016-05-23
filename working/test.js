@@ -15,7 +15,10 @@ engine.loadGame('fateland');
 //engine.DM('fenris', 'catch');
 //engine.checkDM('fenris');
 
-engine.objs.games[0].register('encounters', encounter);
-console.log(engine.objs.games[0].game.encounters[0]);
-console.log(engine.objs.games[0].game.encounters[0].enc);
-console.log(engine.objs.games[0].game.encounters[0].enc.title);
+//engine.objs.games[0].register('encounters', encounter);
+//console.log(engine.objs.games[0].game.encounters[0]);
+//console.log(engine.objs.games[0].game.encounters[0].enc);
+//console.log(engine.objs.games[0].game.encounters[0].enc.title);
+
+console.log(engine.objs.games[0].game);
+engine.objs.games[0].queryGameObject('title', 'fateland');

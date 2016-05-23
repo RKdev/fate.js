@@ -15,7 +15,7 @@ Encounter.prototype.register = function(obj, name){
             if (obj.toLowerCase() === aspects[i].toLowerCase()){
                 this.enc[obj].push(name);
                 console.log(this.enc[obj].toString() + ' added!');
-            } else {console.log("Char.registar.obj: Invalid object");}
+            } //else {console.log("Char.registar.obj: Invalid object");}
         }
     }    else { console.log("Encounter.register: Invalid input");}
 };

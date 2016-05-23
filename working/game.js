@@ -15,16 +15,21 @@ Game.prototype.test = function() {
 };
 
 
-Game.prototype.register = function(obj, name){
+Game.prototype.register = function(aspect, name){
     var aspects = ['title', 'players' , 'characters' , 'mobs' , 'bosses' , 'dm' , 'encounters'];
-    if ((typeof obj === 'string')){
+    if ((typeof aspect === 'string')){
         for (var i = 0; i < aspects.length; i++) {
-            if (obj.toLowerCase() === aspects[i].toLowerCase()){
-                this.game[obj].push(name);
-                console.log(this.game[obj].toString() + ' created!');
-            } else {console.log("Char.registar.obj: Invalid object");}
+            if (aspect.toLowerCase() === aspects[i].toLowerCase()){
+                this.game[aspect].push(name);
+                console.log(this.game[aspect].toString() + ' created!');
+            } //else {console.log("Char.registar.obj: Invalid object");}
         }
     }    else { console.log("Char.register: Invalid input");}
 };
 
+//returns array index of a game item
+Game.prototype.queryGameObject = function(array, item) {
+    console.log(this.game[array]);
+    console.log(this.game[array].indexOf(item));
+};
 module.exports = Game;
