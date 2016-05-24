@@ -5,6 +5,7 @@ function Encounter(){
         characters : [], // a subset of this.game.characters
         mobs : [],  //a subset of this.game.mobs
         bosses : [], // a subset of this.game.bosses
+        init: [] //list of all characters, mobs, bosses ordered by init
     };
 }
 

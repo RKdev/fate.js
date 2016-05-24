@@ -1,6 +1,7 @@
 - start encounter
-	(auto-name the encounter "encounter3" or whatever number encounter we are on)
-	(auto-include a current date value; for ease of navigating these records in the future)
+	*(auto-name the encounter "encounter3" or whatever number encounter we are on) - can use array index + 1
+	*(auto-include a current date value; for ease of navigating these records in the future) - set date on init
+
 
 - add goblin x2 (no need for "add monster goblin x2")
 	(create two randomized goblin npcs, and add them to the encounter)

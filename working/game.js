@@ -46,7 +46,7 @@ Game.prototype.DM = function(player, token) {
             if (this.game.dm.length === 0) {
                 this.game.dm.push(player);
             }
-            console.log(this.objs.dm.toString() + ' is the DM');
+            console.log(this.game.dm.toString() + ' is the DM');
         }
         if (token === 'release') {
             this.game.dm.length = 0;
@@ -63,7 +63,7 @@ Game.prototype.checkDM = function (player) {
             //return(1);
             console.log('1');
             } else {
-//                return(0);
+            //return(0);
                   console.log('0');
                 }
     } else {
