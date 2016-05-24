@@ -1,4 +1,4 @@
-var Engine = require("./engine.js");
+/*var Engine = require("./engine.js");
 var engine = new Engine();
 
 var Encounter = require('./encounter.js');
@@ -31,3 +31,4 @@ engine.objs.games[0].checkDM('fenris');
 //console.log(engine.objs.games[0].game.encounters[0]);
 //console.log(engine.objs.games[0].game.encounters[0].enc);
 //console.log(engine.objs.games[0].game.encounters[0].enc.title);
+*/
