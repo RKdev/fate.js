@@ -2,11 +2,12 @@ Engine = require "./engine.js"
 engine = new Engine()
 Dice = require "./diceroller.js"
 dice = new Dice()
+Encounter = require "./encounter.js"
 
 engine.registerGame('fateland');
 engine.loadGame('fateland');
 dm = engine.objs.games[0].dm
-enc = 0
+encflag = 0
 
 module.exports = (robot) ->
 #     basic DM logic
@@ -36,15 +37,26 @@ module.exports = (robot) ->
 
 #   encounter logic
 
+#start encounter
  robot.hear /^start\s*encounter$/i, (res) ->
-  if enc == 1 then res.send "Encounter already underway!"
-  if enc == 0
-   enc = 1
+  if encflag == 1 then res.send "You're already fighting, jackass. Pay attention."
+  if encflag == 0
+   encflag = 1
+   enccount = engine.objs.games[0].game.encounters.length
+   enc = new Encounter()
+   today = new Date()
+   engine.objs.games[0].register('encounters', enc)
+   enccount = engine.objs.games[0].game.encounters.length
+   engine.objs.games[0].game.encounters[enccount - 1].register('title', today)
+   res.send engine.objs.games[0].game.encounters[enccount - 1].title
    res.send('It ... BEGINS!!!')
+   res.send 'Encounter ' + engine.objs.games[0].game.encounters.length + '!'
+
+#end encounter
  robot.hear /^end\s*encounter$/i, (res) ->
-  if enc == 0 then res.send "No encounter dude."
-  if enc == 1
-   enc = 0
+  if encflag == 0 then res.send "No encounter dude."
+  if encflag == 1
+   encflag = 0
    res.send "The encounter is ... COMPLETE!!"
 
 

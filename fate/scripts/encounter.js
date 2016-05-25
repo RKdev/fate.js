@@ -21,4 +21,17 @@ Encounter.prototype.register = function(obj, name){
     }    else { console.log("Encounter.register: Invalid input");}
 };
 
+Encounter.prototype.show = function(obj, name){
+    var aspects = ['title', 'characters' , 'mobs' , 'bosses'];
+    if ((typeof obj === 'string')){
+        for (var i = 0; i < aspects.length; i++) {
+            if (obj.toLowerCase() === aspects[i].toLowerCase()){
+                console.log('show' + aspect[i]);
+                return (this.enc[obj]);
+            } //else {console.log("Char.registar.obj: Invalid object");}
+        }
+    }    else { console.log("Encounter.register: Invalid input");}
+};
+
+
 module.exports = Encounter;
