@@ -28,7 +28,7 @@ Engine.prototype.storeGame = function(game) {
 
 Engine.prototype.loadGame = function(game) {
     if (typeof game === 'string') {
-        var storage = 'storage/' + game.toLowerCase() + '.json';
+        var storage = 'scripts/storage/' + game.toLowerCase() + '.json';
         this.objs.games[0].game = JSON.parse(fs.readFileSync(storage, 'utf8'));
         console.log(this.objs.games[0].game);
     } else {

@@ -43,28 +43,35 @@ Game.prototype.listCharacters = function() {
 Game.prototype.DM = function(player, token) {
     if ((typeof player === 'string') && (typeof token === 'string')) {
         if (token === 'catch') {
-            if (this.game.dm.length === 0) {
-                this.game.dm.push(player);
+            if (this.game.dm[0] === '') {
+                this.game.dm[0] = player;
             }
-            console.log(this.game.dm.toString() + ' is the DM');
+            return(this.game.dm.toString() + ' is the DM');
         }
         if (token === 'release') {
-            this.game.dm.length = 0;
+            this.game.dm[0] = '';
         }
-        if (this.game.dm.length === 0) {
-            console.log('There is currently no DM!');
+        if (this.game.dm[0] === '') {
+            return('There is currently no DM!');
         }
-    } else { console.log('invalid input'); }
+    } else { return('invalid input'); }
+};
+
+Game.prototype.showDM = function () {
+    if (this.game.dm[0] !== 'undefined') {
+        console.log(this.game.dm);
+        return(this.game.dm[0].toString().toLowerCase());
+    } else {return('No DM!');}
 };
 
 Game.prototype.checkDM = function (player) {
     if (typeof player === 'string') {
         if (player.toLowerCase() === this.game.dm[0].toString().toLowerCase()) {
-            //return(1);
             console.log('1');
+            return(1);
             } else {
-            //return(0);
-                  console.log('0');
+                console.log('0');
+                return(0);
                 }
     } else {
         console.log('checkDM: Invalid Input');
