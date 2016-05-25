@@ -59,9 +59,8 @@ Game.prototype.DM = function(player, token) {
 
 Game.prototype.showDM = function () {
     if (this.game.dm[0] !== '') {
-        console.log(this.game.dm);
-        return(this.game.dm[0].toString().toLowerCase());
-    } else {return('No DM!');}
+        return(this.game.dm[0].toString().toLowerCase() + ' is the DM!');
+    } else {return('There is currently no DM!');}
 };
 
 Game.prototype.checkDM = function (player) {
