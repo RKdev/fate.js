@@ -1,9 +1,16 @@
 /*
 var Engine = require("./engine.js");
 var engine = new Engine();
+var Encounter = require('./encounter.js');
+var encounter = new Encounter();
 
 engine.registerGame('fateland');
 engine.loadGame('fateland');
+
+engine.objs.games[0].register('encounters', encounter);
+console.log(engine.objs.games[0].game.encounters[0]);
+
+
 engine.objs.games[0].DM('', 'release');
 engine.objs.games[0].DM('dlangham', 'catch');
 engine.objs.games[0].showDM();

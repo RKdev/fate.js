@@ -1,6 +1,6 @@
-- start encounter
-	*(auto-name the encounter "encounter3" or whatever number encounter we are on) - can use array index + 1
-	*(auto-include a current date value; for ease of navigating these records in the future) - set date on init
+X- start encounter
+X	*(auto-name the encounter "encounter3" or whatever number encounter we are on) - can use array index + 1
+X	*(auto-include a current date value; for ease of navigating these records in the future) - set date on init
 
 
 - add goblin x2 (no need for "add monster goblin x2")
@@ -9,6 +9,7 @@
 - add party (ie. add all chars from a currentPCs array)
 - add fenris daegalad bojangles (ie. for if only those three are in this combat)
 - cut fenris (remove fenris from encounter)
+X - add fenris
 
 - init all (roll init for all combatants in encounter)
 - init dm (roll init for all npc combatants)
@@ -51,9 +52,9 @@
 	(auto-calculate treasure for goblin1)
 	(same as above)
 
-- rename encounter Waterfall, Goblins, Treasure Chest
-	(encounter now has two names: "encounterX" and "Waterfall, Goblins, Treasure Chest")
-	(to help for navigating these records; typically will be invoked at end of combat, just before "end encounter",
+X- rename encounter Waterfall, Goblins, Treasure Chest
+X	(encounter now has two names: "encounterX" and "Waterfall, Goblins, Treasure Chest")
+X	(to help for navigating these records; typically will be invoked at end of combat, just before "end encounter",
 
 so as not to serve as a spoiler to the players)
 

@@ -1,13 +1,15 @@
 Engine = require "./engine.js"
-engine = new Engine()
 Dice = require "./diceroller.js"
-dice = new Dice()
 Encounter = require "./encounter.js"
+
+engine = new Engine()
+dice = new Dice()
 
 engine.registerGame('fateland');
 engine.loadGame('fateland');
 dm = engine.objs.games[0].dm
 encflag = 0
+enccount = ''
 
 module.exports = (robot) ->
 #     basic DM logic
@@ -48,7 +50,6 @@ module.exports = (robot) ->
    engine.objs.games[0].register('encounters', enc)
    enccount = engine.objs.games[0].game.encounters.length
    engine.objs.games[0].game.encounters[enccount - 1].register('title', today)
-   res.send engine.objs.games[0].game.encounters[enccount - 1].title
    res.send('It ... BEGINS!!!')
    res.send 'Encounter ' + engine.objs.games[0].game.encounters.length + '!'
 
@@ -58,6 +59,20 @@ module.exports = (robot) ->
   if encflag == 1
    encflag = 0
    res.send "The encounter is ... COMPLETE!!"
+
+ robot.hear /^name\s*encounter\s*([a-z0-9]*)/i, (res) ->
+  if encflag == 1
+   engine.objs.games[0].game.encounters[enccount - 1].register('title', res.match[1])
+   res.send 'Encounter is now called: ' + engine.objs.games[0].game.encounters[enccount - 1].enc.title
+
+ robot.hear /^add char\s*([a-z0-9]*)/i, (res) ->
+  if encflag == 1
+   engine.objs.games[0].game.encounters[enccount - 1].register('characters', res.match[1])
+
+ robot.hear /^show characters$/i, (res) ->
+  if encflag == 1
+   res.send engine.objs.games[0].game.encounters[enccount - 1].show('characters')
+
 
 
 # robot.hear /create\s*([a-z0-9\s]*)/i, (res) ->
