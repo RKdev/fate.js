@@ -40,7 +40,13 @@ module.exports = (robot) ->
  robot.hear /^hello$/, (res) ->
   res.send "Hello world!"
 
-#   encounter logic
+#list available characters
+ robot.hear /^list available$/i, (res) ->
+  engine.objs.games[0].listCharacters()
+
+################################
+######  BEGIN encounter logic ######
+################################
 
 #start encounter
  robot.hear /^start\s*encounter$/i, (res) ->
@@ -63,20 +69,25 @@ module.exports = (robot) ->
    encflag = 0
    res.send "The encounter is ... COMPLETE!!"
 
+# name encounter
  robot.hear /^name\s*encounter\s*([a-z0-9]*)/i, (res) ->
   if encflag == 1
    engine.objs.games[0].game.encounters[enccount - 1].register('title', res.match[1])
    res.send 'Encounter is now called: ' + engine.objs.games[0].game.encounters[enccount - 1].enc.title
 
+# add character to encounter
  robot.hear /^add char\s*([a-z0-9]*)/i, (res) ->
   if encflag == 1
    engine.objs.games[0].game.encounters[enccount - 1].register('characters', res.match[1])
 
+# show characters in encounter
  robot.hear /^show characters$/i, (res) ->
   if encflag == 1
    res.send engine.objs.games[0].game.encounters[enccount - 1].show('characters')
 
-
+################################
+######  END    encounter logic ######
+################################
 
 # robot.hear /create\s*([a-z0-9\s]*)/i, (res) ->
 #  res.send char.createCharacter(res.match[1])

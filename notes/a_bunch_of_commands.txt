@@ -1,3 +1,22 @@
+help file
+
+Encounter commands
+  start encounter - creates a new encounter and datestamps it
+
+ ***these commands become available during an encounter***
+  list available - lists all players registered to the game
+  add all - adds all available players to the encounter
+  add char <player name> - adds a player to the encounter
+  cut char <player name> - removes a player from the encounter
+  name encounter - adds a descriptive title to the encounter
+
+  end encounter - *whew*
+
+
+
+
+
+
 X- start encounter
 X	*(auto-name the encounter "encounter3" or whatever number encounter we are on) - can use array index + 1
 X	*(auto-include a current date value; for ease of navigating these records in the future) - set date on init
