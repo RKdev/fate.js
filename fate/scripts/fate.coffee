@@ -78,10 +78,13 @@ module.exports = (robot) ->
 # add character to encounter
  robot.hear /^add char\s*([a-z0-9]*)/i, (res) ->
   if encflag == 1
-   engine.objs.games[0].game.encounters[enccount - 1].register('characters', res.match[1])
+   if res.match[1] == 'all'
+    #for i = 0, i < numbers of chars, i ++ register char in encounter
+   else
+    engine.objs.games[0].game.encounters[enccount - 1].register('characters', res.match[1])
 
 # show characters in encounter
- robot.hear /^show characters$/i, (res) ->
+ robot.hear /^show chars$/i, (res) ->
   if encflag == 1
    res.send engine.objs.games[0].game.encounters[enccount - 1].show('characters')
 
