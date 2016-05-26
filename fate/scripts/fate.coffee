@@ -11,6 +11,9 @@ dm = engine.objs.games[0].dm
 encflag = 0
 enccount = ''
 
+####################THIS CODE IS UGLY. DON'T LIVE LIKE ME######################
+
+
 module.exports = (robot) ->
 #     basic DM logic
 # return current DM
