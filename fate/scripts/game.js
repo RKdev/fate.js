@@ -40,6 +40,16 @@ Game.prototype.listCharacters = function() {
     console.log(retValue);
 };
 
+Game.prototype.charExists = function(char) {
+       var retValue = "Who??";
+        for(var i = 0; i < this.game.characters.length; i++) {
+            if(char.toLowerCase() === this.game.characters[i].charname.toLowerCase()){
+                retValue = i;
+            }
+    }
+    return retValue;
+};
+
 Game.prototype.DM = function(player, token) {
     if ((typeof player === 'string') && (typeof token === 'string')) {
         if (token === 'catch') {

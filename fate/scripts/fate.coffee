@@ -5,14 +5,14 @@ Encounter = require "./encounter.js"
 engine = new Engine()
 dice = new Dice()
 
-engine.registerGame('fateland');
+engine.loadEngine('engine');
 engine.loadGame('fateland');
+
 dm = engine.objs.games[0].dm
 encflag = 0
 enccount = ''
 
 ####################THIS CODE IS UGLY. DON'T LIVE LIKE ME######################
-
 
 module.exports = (robot) ->
 #     basic DM logic
@@ -28,17 +28,21 @@ module.exports = (robot) ->
 
 #release DM
  robot.hear /^release\s*dm/i, (res) ->
-  engine.objs.games[0].DM(dm, 'release')
-  dm = ''
-  res.send engine.objs.games[0].showDM()
+  if res.message.user.name == dm
+   engine.objs.games[0].DM(dm, 'release')
+   dm = ''
+   res.send engine.objs.games[0].showDM()
+  else
+   res.send "You ain't no baller, son"
 
 # simple dice roller
  robot.hear /roll\s*(\d+d\d+\s*[+-]?\s*\d?)/, (res) ->
   res.send dice.roll(res.match[1])
 
 # hello!
- robot.hear /^hello$/, (res) ->
-  res.send "Hello world!"
+ robot.hear /^hello$/, (msg) ->
+  for k,v of msg.robot
+   msg.send k + ":" + v
 
 #list available characters
  robot.hear /^list available$/i, (res) ->
@@ -85,12 +89,21 @@ module.exports = (robot) ->
 
 # show characters in encounter
  robot.hear /^show chars$/i, (res) ->
-  if encflag == 1
-   res.send engine.objs.games[0].game.encounters[enccount - 1].show('characters')
-
+  if  res.message.user.name == dm
+   if encflag == 1
+    res.send engine.objs.games[0].game.encounters[enccount - 1].show('characters')
+   else res.send "This is a time of peace"
+  else res.send "no batta no batta no batta"
 ################################
 ######  END    encounter logic ######
 ################################
+
+ robot.hear /(.*)\s*stats/i, (res) ->
+  res.send res.match[1]
+  if engine.objs.games[0].charExists(res.match[1]) == "Who??"
+   res.send "Who??"
+  else
+   res.send engine.objs.games[0].characters[i].stats
 
 # robot.hear /create\s*([a-z0-9\s]*)/i, (res) ->
 #  res.send char.createCharacter(res.match[1])

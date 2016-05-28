@@ -1,12 +1,16 @@
-/*
+
 var Engine = require("./engine.js");
 var engine = new Engine();
+
+
 var Encounter = require('./encounter.js');
 var encounter = new Encounter();
 
-engine.registerGame('fateland');
 engine.loadGame('fateland');
 
+console.log(engine.objs.games[0].charExists('Fenris'));
+
+/*
 engine.objs.games[0].register('encounters', encounter);
 console.log(engine.objs.games[0].game.encounters[0]);
 
